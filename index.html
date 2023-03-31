@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Precious ken</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+  <title>Beatitude</title>
+<body>
+  <h1 class="heading">Legal Contract Summary Generator</h1>
+  <form id="pdf-form">
+    <input type="file" id="pdf-file" accept=".pdf">
+    <button type="submit" id="submit-btn">Generate Summary</button>
+  </form>
+  <br>
+  <br>
+
+  <table id="summaryTable" style="display: noone;">
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Key Points</th>
+        <th>Risk Level (L, M, H)</th>
+        <th>Benchmark to Risk Level Compared to Similar Industry</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Parties Involved</td>
+        <td id="partiesKeyPoints"></td>
+        <td id="partiesRiskLevel"></td>
+        <td id="partiesBenchmark"></td>
+      </tr>
+      <tr>
+        <td>Obligations</td>
+        <td id="obligationsKeyPoints"></td>
+        <td id="obligationsRiskLevel"></td>
+        <td id="obligationsBenchmark"></td>
+      </tr>
+      <tr>
+        <td>Payment Terms</td>
+        <td id="paymentTermsKeyPoints"></td>
+        <td id="paymentTermsRiskLevel"></td>
+        <td id="paymentTermsBenchmark"></td>
+      </tr>
+      <tr>
+        <td>Termination</td>
+        <td id="terminationKeyPoints"></td>
+        <td id="terminationRiskLevel"></td>
+        <td id="terminationBenchmark"></td>
+      </tr>
+      <tr>
+        <td>Intellectual Property</td>
+        <td id="intellectualPropertyKeyPoints"></td>
+        <td id="intellectualPropertyRiskLevel"></td>
+        <td id="intellectualPropertyBenchmark"></td>
+      </tr>
+      <tr>
+        <td>Confidentiality</td>
+        <td id="confidentialityKeyPoints"></td>
+        <td id="confidentialityRiskLevel"></td>
+        <td id="confidentialityBenchmark"></td>
+      </tr>
+      <tr>
+        <td>Governing Law</td>
+        <td id="governingLawKeyPoints"></td>
+        <td id="governingLawRiskLevel"></td>
+        <td id="governingLawBenchmark"></td>
+      </tr>
+    </tbody>
+  </table>
+  <div id="text-container"></div>
+  <div id="summary"></div>
+  <div id="loading" style="display: none;"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+  <script src="/app.js"></script>
+  <!-- 
+    script starts
+   -->
+   <script>
+    
+    const jsonData = [
+    {
+      PartiesInvolved: {
+      keypoints: "Committee and Contractor",
+      risklevel: "L",
+      benchmark_to_risk_level_compared_to_similar_industry: "Standard"
+      },
+      Obligations: {
+      keypoints: "Contractors duties and obligations, including provision of written reports and confidentiality of information",
+      risklevel: "M",
+      benchmark_to_risk_level_compared_to_similar_industry: "Standard"
+      },
+      PaymentTerms: {
+      keypoints: "Compensation and reimbursement of reasonable out-of-pocket expenses as set forth in Schedule A",
+      risklevel: "L",
+      benchmark_to_risk_level_compared_to_similar_industry: "Standard"
+      },
+      Termination: {
+      keypoints: "Either party can terminate the agreement with 10 days written notice, or without written notice in the case of conviction of a crime, refusal to comply with written policies, serious misconduct or material breach of the agreement",
+      risklevel: "M",
+      benchmark_to_risk_level_compared_to_similar_industry:"Standard"
+      },
+      IntellectualProperty: {
+      keypoints: "Not specified",
+      risklevel: "L",
+      benchmark_to_risk_level_compared_to_similar_industry: "No risk"
+      },
+      Confidentiality: {
+      keypoints: "Contractor shall not disclose the engagement or the terms of the agreement without written consent of the Committee and shall preserve the confidential nature of the relationship",
+      risklevel: "M",
+      benchmark_to_risk_level_compared_to_similar_industry: "Standard"
+      },
+      GoverningLaw: {
+      keypoints:  "Not specified",
+      risklevel: "L",
+      benchmark_to_risk_level_compared_to_similar_industry: "No risk"
+      }
+      }
+    ]
+  </script>
+   <!-- 
+    script ends
+    -->
+</body>
+</html>
